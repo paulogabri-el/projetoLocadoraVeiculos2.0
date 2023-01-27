@@ -1,4 +1,8 @@
-# 🚗 PROJETO LOCADORA DE VEÍCULOS
+#### ⚠️ (Esse é um repositório com algumas implementações que não seram avaliadas, repositório final para avaliação: https://github.com/paulogabri-el/projetoLocadoraVeiculos)
+
+##
+
+# 🚗 PROJETO LOCADORA DE VEÍCULOS 2.0
 
 Aplicação desenvolvida para atender a demanda de uma locadora de veículos, utilizando algumas regras e validações.
 
@@ -44,7 +48,7 @@ Depois da instalação dos programas necessários, seguir os passos:
 ## 📌 Extra
 
 * Meu Primeiro Projeto;
-* Projeto desenvolvido para uma avaliação para uma vaga de Dev. Jr;
+* Projeto desenvolvido para uma avaliação para uma vaga de Dev. Jr (Esse é um repositório com algumas implementações que não seram avaliadas, repositório final para avaliação: https://github.com/paulogabri-el/projetoLocadoraVeiculos);
 * Proporcionou grande apredizado e ensinamentos para os demais projetos.
 
 
