@@ -1,0 +1,35 @@
+﻿@model ProjetoLocadoraDeVeiculos.Models.StatusVeiculo
+
+@{
+    ViewData["Title"] = "Exclusão";
+}
+
+<h1>Exclusão Status Veículo</h1>
+
+<h3>Deseja realmente excluir?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        @if (Model.Internal != true)
+        {
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        }
+        |
+        <a asp-action="Index">Voltar</a>
+    </form>
+    <br />
+    @if (Model.Internal == true)
+    {
+        <h5 class="flex-nowrap">Status internos não podem ser excluídos pois podem afetar a integridade do sistema!</h5>
+    }
+</div>
