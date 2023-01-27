@@ -15,6 +15,8 @@ namespace ProjetoLocadoraDeVeiculos.Controllers
             _usuariorepositorio = usuariorepositorio;
             _sessao = sessao;
         }
+
+        //
         public IActionResult Index()
         {
             // Se o usuário estiver logado, redireciona direto para a home.
