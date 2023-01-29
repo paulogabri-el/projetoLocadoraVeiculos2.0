@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Paulo Gabriel\Desktop\Projeto\clone202301261336\ProjetoLocadoraDeVeiculos
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Paulo Gabriel/Desktop/Projeto/clone202301261336/ProjetoLocadoraDeVeiculos/Views/AlterarSenha/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJhclNlbmhhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Paulo Gabriel/Desktop/Projeto/clone202301261336/ProjetoLocadoraDeVeiculos/Views/CategoriaVeiculos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhVmVpY3Vsb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -110,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Paulo Gabriel/Desktop/Projeto/clone202301261336/ProjetoLocadoraDeVeiculos/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paulo Gabriel/Desktop/Projeto/clone202301261336/ProjetoLocadoraDeVeiculos/Views/Login/RedefinirSenha.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVkZWZpbmlyU2VuaGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Paulo Gabriel/Desktop/Projeto/clone202301261336/ProjetoLocadoraDeVeiculos/Views/Shared/Components/Menu/Default.cshtml]

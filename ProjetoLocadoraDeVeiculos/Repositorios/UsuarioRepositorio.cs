@@ -17,6 +17,11 @@ namespace ProjetoLocadoraDeVeiculos.Repositorios
             return _context.Usuario.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper());
         }
 
+        public Usuario BuscarPorEmailECpf(string email, string cpf)
+        {
+            return _context.Usuario.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper() && x.Cpf == cpf);
+        }
+
         public Usuario BuscarPorID(int id)
         {
             return _context.Usuario.FirstOrDefault(x => x.Id == id);
@@ -27,5 +32,6 @@ namespace ProjetoLocadoraDeVeiculos.Repositorios
             return _context.Usuario.ToList();
         }
 
+        
     }
 }

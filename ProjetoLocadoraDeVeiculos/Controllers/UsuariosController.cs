@@ -145,7 +145,7 @@ namespace ProjetoLocadoraDeVeiculos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([FromServices] ISessao _sessao, int id, [Bind("Id,Nome,Cpf,Email,Senha,DataCadastro,DataAlteracao")] UsuarioViewModel usuario)
+        public async Task<IActionResult> Edit([FromServices] ISessao _sessao, int id, [Bind("Id,Nome,Cpf,Email,DataCadastro,DataAlteracao")] UsuarioViewModel usuario)
         {
             if (_sessao.BuscarSessaoUsuario() == null) return RedirectToAction("Index", "Login");
 
@@ -168,7 +168,6 @@ namespace ProjetoLocadoraDeVeiculos.Controllers
                         editUser.Cpf = usuario.Cpf;
                         editUser.Email = usuario.Email;
                         editUser.DataAlteracao = DateTime.Now;
-                        editUser.Senha = usuario.Senha;
                         editUser.SetSenhaHash();
                         _context.Update(editUser);
                         await _context.SaveChangesAsync();

@@ -22,6 +22,11 @@ namespace ProjetoLocadoraDeVeiculos.Models
         public string Email { get; set; }
         [Required(ErrorMessage = "Campo de preenchimento obrigatório.")]
         [DisplayName("Senha")]
+        [RegularExpression(@"(?=.*[0-30])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$", ErrorMessage = "A senha precisa atender os requisitos:<br /> " +
+            "                                                                                       - No mínimo uma letra maiúscula;<br />" +
+            "                                                                                       - No mínino uma letra minúscula;<br />" +
+            "                                                                                       - No mínimo um número;<br />" +
+            "                                                                                       - No mínimo um caractere especial (@#$%^&+=).<br />")]
         public string Senha { get; set; }
         [DisplayName("Data de cadastro")]
         [DataType(DataType.Date)]
@@ -38,6 +43,14 @@ namespace ProjetoLocadoraDeVeiculos.Models
         public void SetSenhaHash()
         {
             Senha = Senha.GerarHash();
+        }
+
+        public string GerarNovaSenha()
+        {
+            string novaSenha = Guid.NewGuid().ToString().Substring(0, 15);
+            Senha = novaSenha.GerarHash();
+
+            return novaSenha;
         }
 
     }

@@ -1,0 +1,48 @@
+﻿@model RedefinirSenha
+@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Redefinir Senha";
+}
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+
+<section>
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="logo">
+                            <img src="../image/logoLocVec.png" alt="LOCVEC - Locadora de Veículos" />
+                        </div>
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Redefiniação de senha</h3>
+                        <form class="align-items-center flex-column" asp-controller="Login" asp-action="RedefirnirSenha" method="post">
+                            <div class="form-floating mb-3">
+                                <input type="email" asp-for="Email" class="form-control" id="login" placeholder="name@example.com">
+                                <label for="email" class="floatingInput">Email</label>
+                                @Html.ValidationMessageFor(x => x.Email)
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" asp-for="Cpf" class="form-control" id="cpf" placeholder="CPF">
+                                <label for="cpf" class="floatingInput">CPF</label>
+                                @Html.ValidationMessageFor(x => x.Cpf)
+                            </div>
+                            <center>
+                                <button type="submit" class="btn btn-primary w-50">Redefinir</button>
+                            </center>
+                            <div>
+                                <a asp-action="Index" asp-controller="Login">Voltar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
