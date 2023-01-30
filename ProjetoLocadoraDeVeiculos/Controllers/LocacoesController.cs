@@ -429,7 +429,6 @@ namespace ProjetoLocadoraDeVeiculos.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Edit));
             }
             ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "Nome", locacao.ClienteId);
             ViewData["StatusLocacaoId"] = new SelectList(_context.StatusLocacao, "Id", "Nome", locacao.StatusLocacaoId);
