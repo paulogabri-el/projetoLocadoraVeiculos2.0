@@ -74,31 +74,40 @@ namespace ProjetoLocadoraDeVeiculos.Controllers
             if (_sessao.BuscarSessaoUsuario() == null) return RedirectToAction("Index", "Login");
 
 
-            if (ModelState.IsValid)
+            try
             {
-                var valorDiaria = Helper.Convert.ConvertStringDecimal(veiculo.ValorDiaria);
-                var valorMultaFixa = Helper.Convert.ConvertStringDecimal(veiculo.ValorMultaFixa);
-                var valorMultaDiaria = Helper.Convert.ConvertStringDecimal(veiculo.ValorMultaDiaria);
-                var placa = Helper.Convert.RemoverCaracteresPlaca(veiculo.Placa);
-
-                var newCar = new Veiculo()
+                if (ModelState.IsValid)
                 {
-                    Id = veiculo.Id,
-                    Nome = veiculo.Nome,
-                    CategoriaVeiculoId = veiculo.CategoriaVeiculoId,
-                    Placa = placa,
-                    StatusVeiculoId = veiculo.StatusVeiculoId,
-                    ValorDiaria = valorDiaria,
-                    ValorMultaFixa = valorMultaFixa,
-                    ValorMultaDiaria = valorMultaDiaria,
-                    DataCadastro = DateTime.Now
-                };
-                _context.Add(newCar);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                    var valorDiaria = Helper.Convert.ConvertStringDecimal(veiculo.ValorDiaria);
+                    var valorMultaFixa = Helper.Convert.ConvertStringDecimal(veiculo.ValorMultaFixa);
+                    var valorMultaDiaria = Helper.Convert.ConvertStringDecimal(veiculo.ValorMultaDiaria);
+                    var placa = Helper.Convert.RemoverCaracteresPlaca(veiculo.Placa);
+
+                    var newCar = new Veiculo()
+                    {
+                        Id = veiculo.Id,
+                        Nome = veiculo.Nome,
+                        CategoriaVeiculoId = veiculo.CategoriaVeiculoId,
+                        Placa = placa,
+                        StatusVeiculoId = veiculo.StatusVeiculoId,
+                        ValorDiaria = valorDiaria,
+                        ValorMultaFixa = valorMultaFixa,
+                        ValorMultaDiaria = valorMultaDiaria,
+                        DataCadastro = DateTime.Now
+                    };
+                    _context.Add(newCar);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                ViewData["CategoriaVeiculoId"] = new SelectList(_context.CategoriaVeiculo, "Id", "Nome", veiculo.CategoriaVeiculoId);
+                ViewData["StatusVeiculoId"] = new SelectList(_context.StatusVeiculo, "Id", "Nome", veiculo.StatusVeiculoId);
             }
-            ViewData["CategoriaVeiculoId"] = new SelectList(_context.CategoriaVeiculo, "Id", "Nome", veiculo.CategoriaVeiculoId);
-            ViewData["StatusVeiculoId"] = new SelectList(_context.StatusVeiculo, "Id", "Nome", veiculo.StatusVeiculoId);
+            catch (Exception)
+            {
+                TempData["MensagemVeiculoExistente"] = $"Já existe um veículo cadastrado com a placa informada!";
+                return RedirectToAction(nameof(Create));
+            }
+
             return View(veiculo);
         }
 
@@ -175,16 +184,10 @@ namespace ProjetoLocadoraDeVeiculos.Controllers
                     _context.Update(editCar);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception)
                 {
-                    if (!VeiculoExists(veiculo.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    TempData["MensagemVeiculoExistente"] = $"Já existe um veículo cadastrado com a placa informada!";
+                    return RedirectToAction(nameof(Edit));
                 }
                 return RedirectToAction(nameof(Index));
             }

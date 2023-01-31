@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wr+r0hghMghoKsMWEd80HVCAlf7oPRwIKLy2qTCok/FpcFCyI2cWC005QZhtzcOsttOa9TOhwCnDQLkEyJhiKw==",
+  "dgSpecHash": "EzcIUAe0pmhr+aqliueozSfLDqQXsMXgbg8h12/G+iTh1J/GD+D11sj3prr5LztGVhvgFppKLAZYvzQ8nO5sCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Paulo Gabriel\\Desktop\\Projeto\\clone202301261336\\ProjetoLocadoraDeVeiculos\\ProjetoLocadoraDeVeiculos.csproj",
+  "projectFilePath": "C:\\Users\\Paulo Gabriel\\Desktop\\Projeto TSS\\LocVec 2.0\\projetoLocadoraVeiculos2.0\\ProjetoLocadoraDeVeiculos\\ProjetoLocadoraDeVeiculos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paulo Gabriel\\.nuget\\packages\\docsbrvalidator\\1.3.1\\docsbrvalidator.1.3.1.nupkg.sha512",
     "C:\\Users\\Paulo Gabriel\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
